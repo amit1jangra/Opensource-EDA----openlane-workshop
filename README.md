@@ -41,4 +41,11 @@ spice file generation
 ![image](https://user-images.githubusercontent.com/8078903/173187764-653b5b3d-af4b-445b-b434-cd9a1cf99b90.png)
 ![image](https://user-images.githubusercontent.com/8078903/173187743-fbd05112-c1e5-4e3b-bf50-f18fd2ca6e75.png)
 
+ngspice input file for transient analysis as input of inverter is swept
+![image](https://user-images.githubusercontent.com/8078903/175364300-a69b18f0-ecae-48d7-a791-cdb5ff2e5cb9.png)
+
+![image](https://user-images.githubusercontent.com/8078903/175363982-79e8d810-845f-4231-b371-fc32739f08fa.png)
+![image](https://user-images.githubusercontent.com/8078903/175364081-0fd0cd1d-66af-42db-92b4-683c0be1c1fa.png)
+
+
 

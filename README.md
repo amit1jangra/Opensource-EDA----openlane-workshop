@@ -41,11 +41,26 @@ spice file generation
 ![image](https://user-images.githubusercontent.com/8078903/173187764-653b5b3d-af4b-445b-b434-cd9a1cf99b90.png)
 ![image](https://user-images.githubusercontent.com/8078903/173187743-fbd05112-c1e5-4e3b-bf50-f18fd2ca6e75.png)
 
+Inverter characterisation:
 ngspice input file for transient analysis as input of inverter is swept
-![image](https://user-images.githubusercontent.com/8078903/175364300-a69b18f0-ecae-48d7-a791-cdb5ff2e5cb9.png)
+![image](https://user-images.githubusercontent.com/8078903/175472804-7d96e61a-3b16-4bba-a042-ed3731a40c42.png)
 
+For simulation, ngspice is invoked in ther terminal:
+ngspice sky130_inv.spice
+
+The output "y" is to be plotted with "time" and swept over the input "a":
+plot y vs time a
 ![image](https://user-images.githubusercontent.com/8078903/175363982-79e8d810-845f-4231-b371-fc32739f08fa.png)
 ![image](https://user-images.githubusercontent.com/8078903/175364081-0fd0cd1d-66af-42db-92b4-683c0be1c1fa.png)
+![image](https://user-images.githubusercontent.com/8078903/175472931-ca6cd0af-3a01-4dfa-8f01-ecd479632610.png)
+
+
+Magic Features & DRC rules
+![image](https://user-images.githubusercontent.com/8078903/175479542-a35b1f3a-295e-44a4-9780-37f1dfb773ad.png)
+tar xfz drc_test.tgz
+
+The .magicrc loads the tech file required by the user. Since this file sets up the tech file, sky130.tech need not be mentioned in the command used to invoke Magic. Hecen Magic can be invoked more conveniently now:
+magic -d XR
 
 
 

@@ -6,6 +6,8 @@ RTL to GDSII  ASIC design flow with open source EDA tools
 
 ![openlane flow 1](https://user-images.githubusercontent.com/8078903/173179563-d52a5399-5c23-4569-bffb-f6b65ce23bfa.png)
 
+![open_lane_flow](https://user-images.githubusercontent.com/8078903/175562724-857219fd-f1eb-454a-ab4f-ebac744a38b5.PNG)
+
 viewing def files using magic
  - shortcuts (
     - press left click and then right click to draw a rectangle. z for zoom in this region. Z for zoom out
@@ -137,7 +139,27 @@ config.tcl
 ![image](https://user-images.githubusercontent.com/8078903/175560897-61b6516d-c950-4258-8a6e-47bce74f2bdb.png)
 
 
+![image](https://user-images.githubusercontent.com/8078903/175564408-6984d480-b667-48ca-bf37-de916bd451c9.png)
+![image](https://user-images.githubusercontent.com/8078903/175564538-3a089c8d-2035-4b5b-8934-4610899b9fc0.png)
+![image](https://user-images.githubusercontent.com/8078903/175564644-433cbbcc-6ae1-4d08-abc5-828dba9bd88c.png)
+![image](https://user-images.githubusercontent.com/8078903/175564756-445db02e-ebfc-492c-af10-2803649654a1.png)
+![image](https://user-images.githubusercontent.com/8078903/175564878-9ba51d98-7e35-4d0e-a2e1-4eacc8cd76bf.png)
+![image](https://user-images.githubusercontent.com/8078903/175564993-49896e2f-075c-4887-828f-0d46e06ed68b.png)
+![image](https://user-images.githubusercontent.com/8078903/175565121-ea788407-b91b-4c41-a482-ea0e9725e296.png)
+![image](https://user-images.githubusercontent.com/8078903/175565254-e0e0ab98-5d0c-46d7-8f07-66d9ecbc1f40.png)
+![image](https://user-images.githubusercontent.com/8078903/175565441-41a267c7-ec4a-4d7b-ace3-907c2399e227.png)
+![image](https://user-images.githubusercontent.com/8078903/175565508-582fa30c-7ce0-4349-a6d2-d671cd500377.png)
 
+Total negative slack after change in synthesis settings is 0
+
+![image](https://user-images.githubusercontent.com/8078903/175570385-0d4d5ec1-03a9-4a9e-aec1-995f1c5d2acc.png)
+
+run_floorplan
+run_placemnent
+![image](https://user-images.githubusercontent.com/8078903/175578969-9918068b-798c-43f4-8051-8275dbb4de82.png)
+
+![image](https://user-images.githubusercontent.com/8078903/175580791-6a202a0d-1921-470e-ad3d-1191c86ddf4e.png)
+![image](https://user-images.githubusercontent.com/8078903/175583730-fb166609-e78f-4238-a2c5-eb6edeaad82d.png)
 
 
 

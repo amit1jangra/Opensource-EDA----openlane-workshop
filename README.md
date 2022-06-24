@@ -102,6 +102,42 @@ DRC error increased from 3 to 6 with drc style drc(full)
 
 ![image](https://user-images.githubusercontent.com/8078903/175523832-d30264e0-45aa-4bdf-be62-27873fb811fc.png)
 ![image](https://user-images.githubusercontent.com/8078903/175523904-1a764ebb-52f9-46c8-90e7-68eef92679cd.png)
+![image](https://user-images.githubusercontent.com/8078903/175526155-e89717ca-8a73-4fd2-8312-c6e737b5d67a.png)
+
+Cell height should be odd mutiple of track y pitch and cell width should be odd multiple of x pitch.
+Having a signal port at intersection of horizontal and vertical track ensures that route can reach the port from x as well as y directon.
+
+Track info
+
+![image](https://user-images.githubusercontent.com/8078903/175538857-8d8c2731-5488-40d4-8812-a3878da4d350.png)
+![image](https://user-images.githubusercontent.com/8078903/175539085-e400667a-7093-4aa7-976b-d00214916bf4.png)
+
+write lef
+
+![image](https://user-images.githubusercontent.com/8078903/175543155-734c0cfa-c63c-4750-bf5a-bdc7570a3771.png)
+
+![image](https://user-images.githubusercontent.com/8078903/175544565-802596f3-e914-42c5-b0d6-992ba291a30f.png)
+
+Plugging custom LEF to openlane flow
+If a new custom cell needs to be plugged into openlane flow, include the lefs (the one extracted in Step-5) as below:
+
+In the design's config.tcl file add the below line to point to the lef location which is required during spice extraction.
+
+    set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+Include the below command to include the additional lef into the flow:
+
+    set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+  
+    add_lefs -src $lefs
+
+config.tcl 
+
+![image](https://user-images.githubusercontent.com/8078903/175560715-4d7ad675-6fec-481d-94dd-7e90560d7431.png)
+
+![image](https://user-images.githubusercontent.com/8078903/175560897-61b6516d-c950-4258-8a6e-47bce74f2bdb.png)
+
+
+
 
 
 

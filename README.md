@@ -164,10 +164,31 @@ run_placemnent
 ![image](https://user-images.githubusercontent.com/8078903/175607397-f22333ec-1032-4180-9346-516177859a32.png)
 
 
+my_base.sdc
+
+![image](https://user-images.githubusercontent.com/8078903/175613785-0d8441de-c5ff-4adf-84cf-353277c14ab1.png)
+
+pre_sta.conf
+![image](https://user-images.githubusercontent.com/8078903/175614739-a97c3e3d-287a-4e2f-8865-b4e5dd6b7ef9.png)
 
 
+![image](https://user-images.githubusercontent.com/8078903/175614452-8787a2e4-2a12-4c6d-8054-c1d08a9898b1.png)
+![image](https://user-images.githubusercontent.com/8078903/175614525-8fc1d117-8ff2-4ab4-bf26-481266eb88b9.png)
+![image](https://user-images.githubusercontent.com/8078903/175614595-487c7f93-9c9a-4d42-8b79-366f2d038baa.png)
 
+with picorv32a.synthesis_optimized.v
 
+![image](https://user-images.githubusercontent.com/8078903/175615314-04d05521-4251-499a-8e8b-1f2555a9e546.png)
+![image](https://user-images.githubusercontent.com/8078903/175615401-c202ca00-5298-4db7-96b1-370cec16fb27.png)
+
+![image](https://user-images.githubusercontent.com/8078903/175615208-b509eccc-6fc7-47b9-bb08-2907141bbac2.png)
+
+fanout very high for intial flop
+![image](https://user-images.githubusercontent.com/8078903/175618886-ce0fdbdb-5c11-40a3-bb71-7764792681d6.png)
+
+report_net -connections _11344_
+help replace_cell
+![image](https://user-images.githubusercontent.com/8078903/175627471-cd274433-346e-47d3-8de1-521adead118a.png)
 
 
 

@@ -184,10 +184,12 @@ with picorv32a.synthesis_optimized.v
 ![image](https://user-images.githubusercontent.com/8078903/175615208-b509eccc-6fc7-47b9-bb08-2907141bbac2.png)
 
 fanout very high for intial flop
+
 ![image](https://user-images.githubusercontent.com/8078903/175618886-ce0fdbdb-5c11-40a3-bb71-7764792681d6.png)
 
 report_net -connections _11344_
 help replace_cell
+
 ![image](https://user-images.githubusercontent.com/8078903/175627471-cd274433-346e-47d3-8de1-521adead118a.png)
 
 

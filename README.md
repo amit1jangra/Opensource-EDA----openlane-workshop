@@ -82,6 +82,30 @@ After above change
 ![image](https://user-images.githubusercontent.com/8078903/175511708-1af952fc-d7df-4d9d-8f7f-9bd7ceabb985.png)
 ![image](https://user-images.githubusercontent.com/8078903/175511902-4f5d33ad-069d-4cae-afb0-d7b4cd96b8ed.png)
 
+default cif ostyle is gdsii
+cif see to check drc and look at geometric grid, set cif ostyle as per requirement only one style can be active at a time
+try to put cif output rules in separate style variant which can be run on demand and so that it does not slow down magic. prevent using them while using interactive layout
+
+drc rules of two types fast and full
+drc fast - while with normal back end layers check
+drc full - will check everything - compute intensive, slows down magic
+
+![image](https://user-images.githubusercontent.com/8078903/175518266-6acdcf21-1ddc-4645-a297-951d673ce913.png)
+![image](https://user-images.githubusercontent.com/8078903/175518605-2fc1ae24-bd0e-4632-9cb2-c0e77aee63e0.png)
+
+![image](https://user-images.githubusercontent.com/8078903/175520398-e3b2afcc-ce27-4da8-a4e9-4896ff05e194.png)
+![image](https://user-images.githubusercontent.com/8078903/175521752-eaa6a222-5b6e-4078-ac01-5c9f8837dd61.png)
+
+DRC error increased from 3 to 6 with drc style drc(full)
+![image](https://user-images.githubusercontent.com/8078903/175521685-304eaf60-f866-45fb-a718-c24d7ea71276.png)
+![image](https://user-images.githubusercontent.com/8078903/175522225-e7135fa8-08f2-4372-9cd7-2ebefd8a7b58.png)
+
+![image](https://user-images.githubusercontent.com/8078903/175523832-d30264e0-45aa-4bdf-be62-27873fb811fc.png)
+![image](https://user-images.githubusercontent.com/8078903/175523904-1a764ebb-52f9-46c8-90e7-68eef92679cd.png)
+
+
+
+
 
 
 

@@ -62,5 +62,28 @@ tar xfz drc_test.tgz
 The .magicrc loads the tech file required by the user. Since this file sets up the tech file, sky130.tech need not be mentioned in the command used to invoke Magic. Hecen Magic can be invoked more conveniently now:
 magic -d XR
 
+updating sky130A.tech file
+
+![image](https://user-images.githubusercontent.com/8078903/175505493-5735f12b-fa2a-43df-a730-b0d781a5be03.png)
+
+![image](https://user-images.githubusercontent.com/8078903/175505229-a5eeb35d-663e-4b17-91dc-7e06e9b532a6.png)
+
+After updating techfile new src violations highlighted. Earlier it was 10 now 35 DRC errors
+
+![image](https://user-images.githubusercontent.com/8078903/175505888-d36023d7-8be4-4f1c-a051-e7d02342079a.png)
+![image](https://user-images.githubusercontent.com/8078903/175506391-5ccecec2-fb7f-4237-b854-072c97338095.png)
+
+*nsd in sky130A.tech modified to alldiff
+
+![image](https://user-images.githubusercontent.com/8078903/175510835-c3f01bb3-54fa-45da-b2a3-a54382485647.png)
+Before above change
+![image](https://user-images.githubusercontent.com/8078903/175511001-72deb262-583b-4a5f-a347-da352a36f48c.png)
+After above change
+![image](https://user-images.githubusercontent.com/8078903/175511708-1af952fc-d7df-4d9d-8f7f-9bd7ceabb985.png)
+![image](https://user-images.githubusercontent.com/8078903/175511902-4f5d33ad-069d-4cae-afb0-d7b4cd96b8ed.png)
+
+
+
+
 
 

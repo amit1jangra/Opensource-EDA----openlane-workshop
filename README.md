@@ -251,9 +251,49 @@ Clock skew:
 
 ![image](https://user-images.githubusercontent.com/8078903/178032186-a7e90990-5828-4753-ad32-32d3e0ffaf55.png)
 
-insert clk_buf to clk bufeer list
+insert clk_buf to clk buffer list
 
 ![image](https://user-images.githubusercontent.com/8078903/178032631-dee549df-5ae8-4bb9-8c90-964ad90d0867.png)
+
+PG routing
+
+gen_pdn:
+
+![image](https://user-images.githubusercontent.com/8078903/178045576-fab0b3ac-3c5a-4270-9f08-1ab2d2aee84e.png)
+![image](https://user-images.githubusercontent.com/8078903/178045806-b8f40737-f834-44c4-a13e-24045219e294.png)
+
+signal routing
+
+run_routing:
+   - Fast route (engine used for global route done fastroute, it will create routing guides for each of the nets)
+   - Detail Route (detailed routing is done by tritonroute, it should ensure that it honors preprocessed routing guides from fastroute)
+
+
+![image](https://user-images.githubusercontent.com/8078903/178051054-9dc6d286-1053-4d18-9b86-2de40065277a.png)
+![image](https://user-images.githubusercontent.com/8078903/178051108-b4fa2f26-ef72-4f17-87cb-f695296e737e.png)
+![image](https://user-images.githubusercontent.com/8078903/178051185-5d9ef7f1-88d7-47fd-9fa2-048980a71685.png)
+![image](https://user-images.githubusercontent.com/8078903/178051256-67357118-059c-4a37-98a2-92cb7093e673.png)
+![image](https://user-images.githubusercontent.com/8078903/178051333-d7b26cf2-a573-4148-a04f-b4fc70f915f9.png)
+![image](https://user-images.githubusercontent.com/8078903/178051439-1cd3a3ea-0f1e-41de-92c1-15bcbb7196ad.png)
+![image](https://user-images.githubusercontent.com/8078903/178051470-5a3661f3-b34a-43c8-9fa8-b0a82127712c.png)
+
+![image](https://user-images.githubusercontent.com/8078903/178051941-49fc39e1-979c-432d-9827-8742ade4d1d4.png)
+
+
+standalone SPEF extractor
+![image](https://user-images.githubusercontent.com/8078903/178052278-0dc3c3e1-3be0-4fcd-b752-48147c917643.png)
+
+auto generated spef in detailed routing step:
+![image](https://user-images.githubusercontent.com/8078903/178052442-803d855f-5706-4288-bc0c-01a12712be81.png)
+
+After spef generation sta.conf:
+
+![image](https://user-images.githubusercontent.com/8078903/178053397-b2e28073-76a9-48c5-8fe7-fd83c4e206f9.png)
+![image](https://user-images.githubusercontent.com/8078903/178053582-99a8d31a-0bc4-4393-933e-227e3ae1d633.png)
+![image](https://user-images.githubusercontent.com/8078903/178053641-638ee0f7-06f0-4ea0-ba9c-e65ebfd8f13c.png)
+![image](https://user-images.githubusercontent.com/8078903/178053668-bceed876-746c-4a43-a406-812205a6a408.png)
+
+
 
 
 

@@ -193,4 +193,77 @@ help replace_cell
 ![image](https://user-images.githubusercontent.com/8078903/175627471-cd274433-346e-47d3-8de1-521adead118a.png)
 
 
+![image](https://user-images.githubusercontent.com/8078903/177982380-caa2cd4f-1b19-4dde-9062-9cb433cbd134.png)
+![image](https://user-images.githubusercontent.com/8078903/177982484-914bbda3-9db2-4aab-a332-edc73e922db0.png)
+![image](https://user-images.githubusercontent.com/8078903/177982684-fbc4425e-89ad-4fc2-84f5-33dede88ab26.png)
+![image](https://user-images.githubusercontent.com/8078903/177982846-f015f77f-6ea9-409e-8290-caa4d3c1140c.png)
+
+init_floorplan
+
+place_io
+
+global_pacemnet_or
+
+tap_decap_or
+
+![image](https://user-images.githubusercontent.com/8078903/177984838-27f97cb9-9ffd-47d8-84ed-a5f1fb83bb3d.png)
+![image](https://user-images.githubusercontent.com/8078903/177984928-b681402a-b82f-428e-bb9d-4a4b8f80bdad.png)
+
+run_placement
+![image](https://user-images.githubusercontent.com/8078903/177987113-7007e142-e49c-4f0f-ab1a-b0ec4cf0fba4.png)
+
+
+run_cts
+![image](https://user-images.githubusercontent.com/8078903/177987500-f66ff7ce-6632-49dc-b94e-90c0b89d9f10.png)
+
+invoking open sta from openlane so that environment variables can be used defined in openlane flow
+
+![image](https://user-images.githubusercontent.com/8078903/178019177-dea37f5e-ae9e-42a0-b296-008168bdbfc6.png)
+
+when we use clock period as 24.73 ns setup slack is positive (10.189 ns) and when we use it as 12.0 ns it is negative  (-2.54 ns)
+hold slack remains same -1.9767 ns
+
+![image](https://user-images.githubusercontent.com/8078903/178019481-067eb334-cb1b-4e53-bc35-27eb4bd177c7.png)
+![image](https://user-images.githubusercontent.com/8078903/178019368-30e38447-c13d-4a8c-aa1f-fc1afd4b9448.png)
+
+After cts in detailed routing , actual metal traces are being laid capacitances and resistances of these come into picture. so this should increase data arrival time, which wil help in improving hold violation
+
+We have used typical library for synthesis but for analysis we are using min, max library so analysis is not corret . so we exit from openroad but not from openlane
+
+![image](https://user-images.githubusercontent.com/8078903/178026140-2c9b125e-030e-4764-a875-b741d5d76463.png)
+
+![image](https://user-images.githubusercontent.com/8078903/178026501-980b06a4-e526-4f6d-96ff-1357fc7e529b.png)
+![image](https://user-images.githubusercontent.com/8078903/178026632-48c86fdf-01cb-424b-b3b2-aa53467be761.png)
+
+![image](https://user-images.githubusercontent.com/8078903/178026732-d2f46261-98ac-4cb1-8c75-cd71e61856de.png)
+![image](https://user-images.githubusercontent.com/8078903/178026966-960e067f-4947-4284-97db-3790cb9c27a1.png)
+
+triton cts does not support multicorner optimization currently
+
+![image](https://user-images.githubusercontent.com/8078903/178030349-4c6ad5be-e790-48d0-a12d-ea25202b9d74.png)
+
+replacing sky130_fd_sc_hd_clkbuf_1  to sky130_fd_sc_hd_clkbuf_2 using below steps have improved hold slack from  -0.0679 ns to  0.1784 ns
+and setup slack changed  from 5.7807 ns to 5.7045 ns 
+![image](https://user-images.githubusercontent.com/8078903/178031137-7ba8efc8-ca4e-4df2-a45f-a0cc2aca1ac0.png)
+
+
+Clock skew:
+
+![image](https://user-images.githubusercontent.com/8078903/178032186-a7e90990-5828-4753-ad32-32d3e0ffaf55.png)
+
+insert clk_buf to clk bufeer list
+
+![image](https://user-images.githubusercontent.com/8078903/178032631-dee549df-5ae8-4bb9-8c90-964ad90d0867.png)
+
+
+
+
+
+
+
+
+
+
+
+
 

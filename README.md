@@ -5,25 +5,25 @@ Stages of Openlane Flow:
 RTL to GDSII  ASIC design flow with open source EDA tools 
 
 Synthesis
-  -yosys-Performs RTL synthesis using GTECH mapping
-  -abc-maps the cells to standard cells described in PDK(Skywater130) and produce netlsit
-  -OpenSTA-performs timing analysis on the resulting netlist
-  -Fault-Design for test
+  - yosys-Performs RTL synthesis using GTECH mapping
+  - abc-maps the cells to standard cells described in PDK(Skywater130) and produce netlsit
+  - OpenSTA-performs timing analysis on the resulting netlist
+  - Fault-Design for test
 
 Floorplan
-  -init_fp-Defines the core area for macros and rows for placement and tracks for routing
-  -IOplacer-places the macro and output ports
-  -PDN-Power Distribution network
-  -tapcells-insert well taps and decap cells
+  - init_fp-Defines the core area for macros and rows for placement and tracks for routing
+  - IOplacer-places the macro and output ports
+  - PDN-Power Distribution network
+  - tapcells-insert well taps and decap cells
 
 Placement(Global and Detailed)
-  -RePlace-performs global placement
-  -Resizer-performs optimizations on the design
-  -perform timing optimization
-  -perform detailed placement
+  - RePlace-performs global placement
+  - Resizer-performs optimizations on the design
+  - perform timing optimization
+  - perform detailed placement
 
 Clock tree synthesis
-  -TritonCTS-synthesizes clock distribution network
+  - TritonCTS-synthesizes clock distribution network
 
 Routing
  - FastRoute-performs global routing
@@ -58,14 +58,18 @@ prep -design picorv32a
 ![open_lane_flow](https://user-images.githubusercontent.com/8078903/175562724-857219fd-f1eb-454a-ab4f-ebac744a38b5.PNG)
 
 The inputs to the design flow are
-  -Design files
-  -PDK files
-Design rule check(DRC)
-Layout versus synthesis check (LVS)
-PDK files
+  - Design files
+  - PDK files
+
+Design file:
+  - Design rule check(DRC)
+  - Layout versus synthesis check (LVS)
+
+PDK files:
   -.lef files
   -.tlef files
-  -Libraries of standard cells
+  - Libraries of standard cells
+
 Output of the flow is GDSII file (.gds)
 
 .gds file is given to foundry for manufacturing the chip

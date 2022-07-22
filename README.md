@@ -37,8 +37,8 @@ Placement(Global and Detailed)
 
 RePlace-performs global placement
 Resizer-performs optimizations on the design
-OpenPhySyn-perform timing optimization
-OpenDP-performs detailed placement
+perform timing optimization
+performs detailed placement
 Clock tree synthesis
 
 TritonCTS-synthesizes clock distribution network
@@ -56,6 +56,7 @@ Magic-performs DRC and antenna check
 Netgen-performs LVS check(Layout versus synthesis)
 
 Day-1 [Inception of open-source EDA, OpenLANE and Sky130 PDK]
+
 To start the flow we use the command
 
 ./flow.tcl -interactive (for interactive flow)

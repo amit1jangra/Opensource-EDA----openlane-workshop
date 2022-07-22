@@ -1,52 +1,36 @@
 # Opensource-EDA----openlane-workshop
+
+Stages of Openlane Flow:
+
 RTL to GDSII  ASIC design flow with open source EDA tools 
- - Synthesis (yosys for cell mapping and ABC for synthesis, early STA analysis)
- - Floorplan
- - Placement of cells
-
-The inputs to the design flow are
-
-Design files
-PDK files
-Design files
-Design rule check(DRC)
-Layout versus synthesis check (LVS)
-PDK files
-.lef files
-.tlef files
-Libraries of standard cells
-Output of the flow is GDSII file (.gds)
-
-.gds file is given to foundry for manufacturing the chip
-
-Stages of Openlane Flow
 
 Synthesis
+  -yosys-Performs RTL synthesis using GTECH mapping
+  -abc-maps the cells to standard cells described in PDK(Skywater130) and produce netlsit
+  -OpenSTA-performs timing analysis on the resulting netlist
+  -Fault-Design for test
 
-yosys-Performs RTL synthesis using GTECH mapping
-abc-maps the cells to standard cells described in PDK(Skywater130) and produce netlsit
-OpenSTA-performs timing analysis on the resulting netlist
-Fault-Design for test
 Floorplan
+  -init_fp-Defines the core area for macros and rows for placement and tracks for routing
+  -IOplacer-places the macro and output ports
+  -PDN-Power Distribution network
+  -tapcells-insert well taps and decap cells
 
-init_fp-Defines the core area for macros and rows for placement and tracks for routing
-IOplacer-places the macro and output ports
-PDN-Power Distribution network
-tapcells-insert well taps and decap cells
 Placement(Global and Detailed)
+  -RePlace-performs global placement
+  -Resizer-performs optimizations on the design
+  -perform timing optimization
+  -perform detailed placement
 
-RePlace-performs global placement
-Resizer-performs optimizations on the design
-perform timing optimization
-performs detailed placement
 Clock tree synthesis
+  -TritonCTS-synthesizes clock distribution network
 
-TritonCTS-synthesizes clock distribution network
 Routing
+ - FastRoute-performs global routing
+ - TritonRoute-perfoms detailed routing
 
-FastRoute-performs global routing
-TritonRoute-perfoms detailed routing
 SPEF Extractor-perfoms SPEF extraction that include parasitics extraction
+
 GDSII
 
 Magic-streams out the final GDSII layout
@@ -72,6 +56,19 @@ prep -design picorv32a
 ![openlane flow 1](https://user-images.githubusercontent.com/8078903/173179563-d52a5399-5c23-4569-bffb-f6b65ce23bfa.png)
 
 ![open_lane_flow](https://user-images.githubusercontent.com/8078903/175562724-857219fd-f1eb-454a-ab4f-ebac744a38b5.PNG)
+
+The inputs to the design flow are
+  -Design files
+  -PDK files
+Design rule check(DRC)
+Layout versus synthesis check (LVS)
+PDK files
+  -.lef files
+  -.tlef files
+  -Libraries of standard cells
+Output of the flow is GDSII file (.gds)
+
+.gds file is given to foundry for manufacturing the chip
 
 Day-2 [Floorplanning and Placement]
 Floorplan stage performs the following process
@@ -121,8 +118,10 @@ viewing mag file using magic
 LEF generation from Magic
 ![image](https://user-images.githubusercontent.com/8078903/173184368-4e79a98a-c60c-4ea3-868f-8a366d5a21c3.png)
 
-Day-3 [Design library cell using Magic Layout and ngspice characterization]
+Day-3 [Design library cell using Magic Layout and ngspice characterization]:
+
 Parasitic extraction
+
 spice file generation
 ![image](https://user-images.githubusercontent.com/8078903/173187732-fccb0b3d-11d3-4f55-8347-3e574586102c.png)
 ![image](https://user-images.githubusercontent.com/8078903/173187764-653b5b3d-af4b-445b-b434-cd9a1cf99b90.png)
@@ -418,18 +417,5 @@ After spef generation sta.conf:
 ![image](https://user-images.githubusercontent.com/8078903/178053582-99a8d31a-0bc4-4393-933e-227e3ae1d633.png)
 ![image](https://user-images.githubusercontent.com/8078903/178053641-638ee0f7-06f0-4ea0-ba9c-e65ebfd8f13c.png)
 ![image](https://user-images.githubusercontent.com/8078903/178053668-bceed876-746c-4a43-a406-812205a6a408.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

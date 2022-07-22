@@ -76,16 +76,14 @@ Output of the flow is GDSII file (.gds)
 
 Day-2 [Floorplanning and Placement]
 Floorplan stage performs the following process
+  - Die area
+  - Core utilization
+  - aspect ratio
+  - Input and Output cell
+  - power distribution network
+  - Macroplacememt
 
-Die area
-Core utilization
-aspect ratio
-Input and Output cell
-power distribution network
-Macroplacememt
-Floorplan is performed using the command
-
-run_floorplan
+Floorplan is performed using the command : run_floorplan
 
 OpenLANE_flow directory contains "configuration" which contains variables required for each stage
 
@@ -99,16 +97,16 @@ viewing def files using magic
 
 Floorplan Def
 using magic to view floorplan def
-![image](https://user-images.githubusercontent.com/8078903/173085908-7bc68a76-9185-45ba-8381-321c287ab9cc.png)
+   ![image](https://user-images.githubusercontent.com/8078903/173085908-7bc68a76-9185-45ba-8381-321c287ab9cc.png)
 
 ![image](https://user-images.githubusercontent.com/8078903/173085739-30ee4256-a7c4-4667-820d-5a15be738d8f.png)
 
 
-Placement Def
-Viewing placement def in Magic
-![image](https://user-images.githubusercontent.com/8078903/173083430-996c40ac-0691-4c91-a84b-bec3d7adaf23.png)
+Placement Def:
 
-![image](https://user-images.githubusercontent.com/8078903/173081727-087d65b7-2e16-4fca-830f-57334030112f.png)
+Viewing placement def in Magic
+    ![image](https://user-images.githubusercontent.com/8078903/173083430-996c40ac-0691-4c91-a84b-bec3d7adaf23.png)
+    ![image](https://user-images.githubusercontent.com/8078903/173081727-087d65b7-2e16-4fca-830f-57334030112f.png)
 
 
 STD CELL Characterisation:

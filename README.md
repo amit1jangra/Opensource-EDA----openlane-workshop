@@ -4,9 +4,90 @@ RTL to GDSII  ASIC design flow with open source EDA tools
  - Floorplan
  - Placement of cells
 
+The inputs to the design flow are
+
+Design files
+PDK files
+Design files
+Design rule check(DRC)
+Layout versus synthesis check (LVS)
+PDK files
+.lef files
+.tlef files
+Libraries of standard cells
+Output of the flow is GDSII file (.gds)
+
+.gds file is given to foundry for manufacturing the chip
+
+Stages of Openlane Flow
+
+Synthesis
+
+yosys-Performs RTL synthesis using GTECH mapping
+abc-maps the cells to standard cells described in PDK(Skywater130) and produce netlsit
+OpenSTA-performs timing analysis on the resulting netlist
+Fault-Design for test
+Floorplan
+
+init_fp-Defines the core area for macros and rows for placement and tracks for routing
+IOplacer-places the macro and output ports
+PDN-Power Distribution network
+tapcells-insert well taps and decap cells
+Placement(Global and Detailed)
+
+RePlace-performs global placement
+Resizer-performs optimizations on the design
+OpenPhySyn-perform timing optimization
+OpenDP-performs detailed placement
+Clock tree synthesis
+
+TritonCTS-synthesizes clock distribution network
+Routing
+
+FastRoute-performs global routing
+TritonRoute-perfoms detailed routing
+SPEF Extractor-perfoms SPEF extraction that include parasitics extraction
+GDSII
+
+Magic-streams out the final GDSII layout
+Checks
+
+Magic-performs DRC and antenna check
+Netgen-performs LVS check(Layout versus synthesis)
+
+Day-1 [Inception of open-source EDA, OpenLANE and Sky130 PDK]
+To start the flow we use the command
+
+./flow.tcl -interactive (for interactive flow)
+
+To include the packages of openlane
+
+package require openlane 0.9
+
+To include the design
+
+prep -design picorv32a
+
 ![openlane flow 1](https://user-images.githubusercontent.com/8078903/173179563-d52a5399-5c23-4569-bffb-f6b65ce23bfa.png)
 
 ![open_lane_flow](https://user-images.githubusercontent.com/8078903/175562724-857219fd-f1eb-454a-ab4f-ebac744a38b5.PNG)
+
+Day-2 [Floorplanning and Placement]
+Floorplan stage performs the following process
+
+Die area
+Core utilization
+aspect ratio
+Input and Output cell
+power distribution network
+Macroplacememt
+Floorplan is performed using the command
+
+run_floorplan
+
+OpenLANE_flow directory contains "configuration" which contains variables required for each stage
+
+Examples: * FP_CORE_UTIL gives the ratio of area occupied by netlist to the total are of core * FP_ASPECT_RATIO gives the aspect ratio (Height/Width)
 
 viewing def files using magic
  - shortcuts (
@@ -15,13 +96,14 @@ viewing def files using magic
     - s and v for completely fit design to centre
 
 Floorplan Def
+using magic to view floorplan def
 ![image](https://user-images.githubusercontent.com/8078903/173085908-7bc68a76-9185-45ba-8381-321c287ab9cc.png)
 
 ![image](https://user-images.githubusercontent.com/8078903/173085739-30ee4256-a7c4-4667-820d-5a15be738d8f.png)
 
 
 Placement Def
-
+Viewing placement def in Magic
 ![image](https://user-images.githubusercontent.com/8078903/173083430-996c40ac-0691-4c91-a84b-bec3d7adaf23.png)
 
 ![image](https://user-images.githubusercontent.com/8078903/173081727-087d65b7-2e16-4fca-830f-57334030112f.png)
@@ -29,6 +111,7 @@ Placement Def
 
 STD CELL Characterisation:
 ![image](https://user-images.githubusercontent.com/8078903/173179902-c9b8d5ae-c51c-4066-96f0-0627c50ef63b.png)
+
 viewing mag file using magic
 ![image](https://user-images.githubusercontent.com/8078903/173180008-865541e1-855a-4ef6-917b-48accf679f94.png)
 ![image](https://user-images.githubusercontent.com/8078903/173180243-5c923733-4914-4689-82d5-9944bfdc2a35.png)
@@ -37,13 +120,14 @@ viewing mag file using magic
 LEF generation from Magic
 ![image](https://user-images.githubusercontent.com/8078903/173184368-4e79a98a-c60c-4ea3-868f-8a366d5a21c3.png)
 
+Day-3 [Design library cell using Magic Layout and ngspice characterization]
 Parasitic extraction
 spice file generation
 ![image](https://user-images.githubusercontent.com/8078903/173187732-fccb0b3d-11d3-4f55-8347-3e574586102c.png)
 ![image](https://user-images.githubusercontent.com/8078903/173187764-653b5b3d-af4b-445b-b434-cd9a1cf99b90.png)
 ![image](https://user-images.githubusercontent.com/8078903/173187743-fbd05112-c1e5-4e3b-bf50-f18fd2ca6e75.png)
 
-Inverter characterisation:
+Std Cell (Inverter) characterisation:
 ngspice input file for transient analysis as input of inverter is swept
 ![image](https://user-images.githubusercontent.com/8078903/175472804-7d96e61a-3b16-4bba-a042-ed3731a40c42.png)
 
@@ -121,7 +205,7 @@ write lef
 ![image](https://user-images.githubusercontent.com/8078903/175544565-802596f3-e914-42c5-b0d6-992ba291a30f.png)
 
 Plugging custom LEF to openlane flow
-If a new custom cell needs to be plugged into openlane flow, include the lefs (the one extracted in Step-5) as below:
+If a new custom cell needs to be plugged into openlane flow, include the lefs (the one extracted earlier) as below:
 
 In the design's config.tcl file add the below line to point to the lef location which is required during spice extraction.
 
@@ -154,7 +238,10 @@ Total negative slack after change in synthesis settings is 0
 
 ![image](https://user-images.githubusercontent.com/8078903/175570385-0d4d5ec1-03a9-4a9e-aec1-995f1c5d2acc.png)
 
+Day-4:  timing analysis and importance of good clock tree
+
 run_floorplan
+
 run_placemnent
 ![image](https://user-images.githubusercontent.com/8078903/175578969-9918068b-798c-43f4-8051-8275dbb4de82.png)
 
@@ -255,12 +342,50 @@ insert clk_buf to clk buffer list
 
 ![image](https://user-images.githubusercontent.com/8078903/178032631-dee549df-5ae8-4bb9-8c90-964ad90d0867.png)
 
+
+DAY 5 : Routing
+
+run_cts is completed
+
+see the (CURRENT_DEF) and check whether it is picorv32a_cts.def
+
+Now do the command "gen_pdn" to make power distribution
+
+The standard must be present between rails (vdd and gnd) and hence standard cells must be multiples of the gap
+
+During pdn vdd and gnd are provided to stdcells by using pads,rings,straps,rails
+
+Now do the command "run_routing"
+
+Use "ROUTING_STRATEGY" to do routing
+
+Routing is divided into two stages
+
+Global-(FAST_ROUTE)
+Detailed-Tritonroute
+TritonRoute use MILP algorithm to panel routing with inter_layer and intra_layer roting
+
+The output of fastroute is route guides
+
+Access points and access point clusters are defined
+
+After routing is finished,remove the vilation manually
+
+Post route STA analysis is done
+
+extract parasitics using Python API
+
+so .spef is created
+
+read_spef to know the parasitics of wires
+
 PG routing
 
 gen_pdn:
 
 ![image](https://user-images.githubusercontent.com/8078903/178045576-fab0b3ac-3c5a-4270-9f08-1ab2d2aee84e.png)
 ![image](https://user-images.githubusercontent.com/8078903/178045806-b8f40737-f834-44c4-a13e-24045219e294.png)
+
 
 signal routing
 
